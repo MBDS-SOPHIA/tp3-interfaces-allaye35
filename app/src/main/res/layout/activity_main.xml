@@ -7,29 +7,71 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Affichage du résultat du lancer -->
+    <!-- Titre -->
     <TextView
-        android:id="@+id/resultText"
+        android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Roll the dice!"
+        android:text="Table de Casino"
         android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp" />
-
-    <!-- Bouton pour lancer le dé -->
-    <Button
-        android:id="@+id/rollButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ROLL"
-        app:layout_constraintTop_toBottomOf="@id/resultText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
+    <!-- Résultat du premier dé -->
+    <TextView
+        android:id="@+id/dice1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dé 1: 0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/dice2Text"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp" />
 
+    <!-- Résultat du deuxième dé -->
+    <TextView
+        android:id="@+id/dice2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dé 2: 0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
+        app:layout_constraintStart_toEndOf="@id/dice1Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp" />
 
+    <!-- Message de félicitations -->
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#00FF00"
+        app:layout_constraintTop_toBottomOf="@id/dice1Text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Bouton pour lancer les dés -->
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lancer les Dés"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/messageText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
